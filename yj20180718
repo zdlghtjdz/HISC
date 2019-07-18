@@ -1,0 +1,97 @@
+## 2019-07-18 개발일지
+
+#### VM에 Ubuntu 설치
+
+- [설치 tutorial](https://gist.github.com/ga-wolf/92d810797bfbd8ea619827034719b4d0)
+- 설치 안돼서 포맷하고 설치함
+
+
+
+#### Git 설치
+
+- [Installing Git tutorial](https://www.liquidweb.com/kb/install-git-ubuntu-16-04-lts/)
+
+- 실행 안되는 경우 sudo 사용
+
+- ```
+  $apt-get update
+  
+  ## installing git
+  $apt-get install git-core
+  
+  ## check git version
+  $git --version
+  
+  ## configure git setting
+  $git config --global user.name "testuser"
+  $git config --global user.email "testuser@example.com"
+  
+  ## verify changes
+  $cat ~/.gitconfig
+  $git config --list
+  ```
+
+  
+
+#### MATLAB 설치
+
+- [설치 tutorial](https://www.mathworks.com/matlabcentral/answers/103682-how-do-i-install-the-matlab-student-version-on-linux)
+
+- [Download R2019a](https://www.mathworks.com/downloads/web_downloads/download_release?release=R2019a)
+
+- Terminal 실행 코드
+
+  - 압축 해제한 후 해당 디렉토리로 이동
+
+  - ```
+    $sudo ./install
+    ```
+
+- MATLAB 환경변수 설정
+
+  - ```
+    ## 환경변수 설정
+    $export PATH=$PATH:/MATLAB설치경로
+    
+    ## 환경변수 확인
+    $echo $PATH
+    ```
+
+    
+
+#### Object Skeleton Project(on Github)
+
+- [Github Link](https://github.com/zeakey/skeleton.git)
+
+- [Dataset Link](http://kaizhao.net/sk-large)
+
+- ```
+  ## clone the project
+  $git clone https://github.com/zeakey/skeleton.git
+  
+  ## download dataset
+  $git clone https://github.com/shucv/SK-LARGE && cd SK-LARGE
+  
+  ## download and extract data
+  bash get_data.sh
+  
+  ## data augmentation
+  matlab -nodisplay -r "run augmentation.m; exit"
+  ```
+
+  
+
+### Troubleshooting
+
+#### VM 디스크 부족
+
+- VM 삭제하고 다시 설치함
+
+
+
+#### Install Guest Additions Error
+
+- 문제: Insert Guest Additions CD Image... 실행 불가
+- 해결: mount된 iso unmount
+- [링크](https://askubuntu.com/questions/301705/unable-to-mount-the-cd-dvd-image-on-virtualbox)
+- 
